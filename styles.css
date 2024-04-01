@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #00032d; /* Darker background color */
+    font-family: 'Mtbradley', cursive; /* Caligraphic font family */
+    position: relative; /* Position relative for the glitter */
+    color: #ffffff; /* White color for the text */
+  }
+  
+  .glitter-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .glitter {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: linear-gradient(45deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #1d1de8, #e81de8, #ff2400); /* Rainbow-style gradient */
+    border-radius: 50%;
+    animation: glitter-rotate 3s linear infinite, glitter-circle 6s linear infinite;
+  }
+  
+  @keyframes glitter-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes glitter-circle {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateY(100px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateY(100px) rotate(360deg);
+    }
+  }
+  
+  .april-fools {
+    position: relative;
+    font-size: 48px;
+    font-weight: bold; /* Thicker font weight */
+    text-align: center; /* Align text centrally */
+    z-index: 2; /* Ensure text appears above glitter */
+    animation: bounce 1.5s infinite alternate;
+  }
+  
+  .emoji {
+    font-size: 48px; /* Adjust emoji size */
+    margin-left: 5px; /* Add some spacing between text and emoji */
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  .second-line {
+    color: #fff; /* White color for the second line */
+    font-weight: bold; /* Thicker font weight for the second line */
+  }
+  
+  @media (max-width: 600px) {
+    .april-fools {
+      font-size: 36px; /* Adjust font size for smaller screens */
+    }
+    
+    .emoji {
+      font-size: 36px; /* Adjust emoji size for smaller screens */
+    }
+  }
+  
